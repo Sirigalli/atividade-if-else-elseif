@@ -156,15 +156,17 @@ console.log("_______________________________");
 //     idade: readline.questionInt("Digite a sua idade: ")
 // };
 
-// if (usuario.ingresso === false) {
-//     console.log(`${usuario.nome}, dirija-se à bilheteria.`);
-// } else if (usuario.ingresso && usuario.idade < 18) {
-//     console.log("Meia-entrada: menor de idade")
-// } else if(usuario.ingresso && usuario.idade >= 60) {
-//     console.log("Meia entrada: maior de idade")
+// if (usuario.ingresso) {
+//     if (usuario.idade < 18) {
+//         console.log("Meia-entrada: menor de idade");
+//     } else if (usuario.idade >= 60) {
+//         console.log("Meia-entrada: idoso");
+//     } else {
+//         console.log("Entrada inteira");
+//     }
 // } else {
-//     console.log("Entrada inteira")
-// };
+//     console.log(`${usuario.nome}, dirija-se à bilheteria.`);
+// }
 
 console.log("_______________________________");
 
@@ -209,12 +211,16 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-let usuario = {
-    estudante: readline.keyInYN("Voce e estudante?: "),
-    idoso: readline.keyInYN("Voce tem mais de 60 anos?: ")
-}
+// let usuario = {
+//     estudante: readline.keyInYN("Voce e estudante?: "),
+//     idoso: readline.keyInYN("Voce tem mais de 60 anos?: ")
+// };
 
-
+// if (usuario.estudante || usuario.idoso) {
+//     console.log("Desconto de 50% aplicado!")
+// } else {
+//     console.log("Sem desconto. Preço cheio.")
+// };
 
 console.log("_______________________________");
 
@@ -236,6 +242,29 @@ console.log("_______________________________");
 // e) Exiba uma mensagem final: "<nome>: <situação> (média: <média>)"
 
 // → Seu código aqui:
+
+// let aluno = {
+//     nome: readline.question("Digite seu nome: "),
+//     nota1: readline.questionInt("Digite a primeira nota: "),
+//     nota2: readline.questionInt("Digite a segunda nota: ")
+// };
+
+// let media = (aluno.nota1 + aluno.nota2) / 2;
+
+// aluno.media = media;
+
+// if (aluno.media >= 7) {
+//     console.log("Aprovado")
+// } else if (aluno.media >= 5) {
+//     console.log("Em recuperacao")
+// } else {
+//     console.log("Reprovado")
+// };
+
+// console.table(aluno);
+
+// console.log(`Nome: ${aluno.nome}, media: ${aluno.media}`);
+
 
 
 console.log("_______________________________");
@@ -260,5 +289,42 @@ console.log("_______________________________");
 // g) Chame o professor para realizar alguns testes 🫡
 
 // → Seu código aqui:
+
+// let calculo = {
+//     primeiroNumero: readline.questionFloat("Digite o primeiro numero: "),
+//     segundoNumero: readline.questionFloat("Digite o segundo numero: "),
+//     simboloDaOperacao: readline.questionInt("Digite um numero: 1-Soma | 2-Subtracao | 3-Multiplicacao | 4-Divisao: ")
+// }
+
+// let resultado;
+
+// if (calculo.simboloDaOperacao === 1) {
+//     calculo.simboloDaOperacao = "+"
+//     resultado = calculo.primeiroNumero + calculo.segundoNumero
+
+// } else if (calculo.simboloDaOperacao === 2) {
+//     calculo.simboloDaOperacao = "-"
+//     resultado = calculo.primeiroNumero - calculo.segundoNumero
+
+// } else if (calculo.simboloDaOperacao === 3) {
+//     calculo.simboloDaOperacao = "*"
+//     resultado = calculo.primeiroNumero * calculo.segundoNumero
+
+// } else if (calculo.simboloDaOperacao === 4) {
+
+//     if (calculo.segundoNumero === 0) {
+//         console.log("Erro: divisao por zero nao permitida")
+//     } else {
+//         calculo.simboloDaOperacao = "/"
+//         resultado = calculo.primeiroNumero / calculo.segundoNumero
+//     }
+
+// } else {
+//     console.log("Operacao invalida")
+// }
+
+// if (resultado !== undefined) {
+//     console.log(`${calculo.primeiroNumero} ${calculo.simboloDaOperacao} ${calculo.segundoNumero} = ${resultado}`);
+// }
 
 console.log("_______________________________");
