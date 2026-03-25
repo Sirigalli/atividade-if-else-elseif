@@ -100,50 +100,50 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
-let reserva = {
-    hospede: {
-        nome: "",
-        ehSocio: false,
-        temPet: false
-    }, 
-    quarto: {
-        numero: 101,
-        tipo: "stardand",
-        petFriendly: false,
-        disponivel: true,
-        precoPorNoite: 250
-    }
-};
+// let reserva = {
+//     hospede: {
+//         nome: "",
+//         ehSocio: false,
+//         temPet: false
+//     }, 
+//     quarto: {
+//         numero: 101,
+//         tipo: "stardand",
+//         petFriendly: false,
+//         disponivel: true,
+//         precoPorNoite: 250
+//     }
+// };
 
-reserva.hospede.nome = readline.question("Digite seu nome: ");
-reserva.hospede.ehSocio = readline.keyInYN("E socio do clube fidelidade?: ");
-reserva.hospede.temPet = readline.keyInYN("Tem animal de estimacao?: ");
+// reserva.hospede.nome = readline.question("Digite seu nome: ");
+// reserva.hospede.ehSocio = readline.keyInYN("E socio do clube fidelidade?: ");
+// reserva.hospede.temPet = readline.keyInYN("Tem animal de estimacao?: ");
 
-let noites = readline.questionInt("Digite quantas noites deseja ficar: ");
+// let noites = readline.questionInt("Digite quantas noites deseja ficar: ");
 
-let precoBase = 0;
-let desconto;
+// let precoBase = 0;
+// let desconto;
 
-if (!reserva.quarto.disponivel) {
-    console.log("Quarto indisponivel")
-} else if (reserva.hospede.temPet && !reserva.quarto.petFriendly) {
-    console.log("Quarto não é petfriendly, reserva cancelada")
-} else {
-    precoBase = reserva.quarto.precoPorNoite * noites;
-    desconto = 0;
+// if (!reserva.quarto.disponivel) {
+//     console.log("Quarto indisponivel")
+// } else if (reserva.hospede.temPet && !reserva.quarto.petFriendly) {
+//     console.log("Quarto não é petfriendly, reserva cancelada")
+// } else {
+//     precoBase = reserva.quarto.precoPorNoite * noites;
+//     desconto = 0;
 
-    if (reserva.hospede.ehSocio && noites >= 3) {
-        desconto = 0.15;
-    } else if (reserva.hospede.ehSocio && noites < 3) {
-        desconto = 0.05
-    }      
-};
+//     if (reserva.hospede.ehSocio && noites >= 3) {
+//         desconto = 0.15;
+//     } else if (reserva.hospede.ehSocio && noites < 3) {
+//         desconto = 0.05
+//     }      
+// };
 
-precoBase = precoBase * (1 - desconto);
+// precoBase = precoBase * (1 - desconto);
 
-console.table(reserva);
+// console.table(reserva);
 
-console.log(`Reserva confirmada para: ${reserva.hospede.nome}! Total: ${precoBase}`); 
+// console.log(`Reserva confirmada para: ${reserva.hospede.nome}! Total: ${precoBase}`); 
 
 
 
@@ -181,8 +181,37 @@ console.log("_______________________________");
 
 // → Seu código aqui:
 
+// let aluno = {
+//     dados: {
+//         nome: readline.question("Nome do aluno: "),
+//         frequencia: readline.questionInt("Percentual de frequência (0-100): ")
+//     },
+//     notas: {
+//         nota1: readline.questionFloat("Primeira nota (0-10): "),
+//         nota2: readline.questionFloat("Segunda nota (0-10): "),
+//         nota3: readline.questionFloat("Terceira nota (0-10): ")
+//     }
+// };
+
+// aluno.notas.media = (aluno.notas.nota1 + aluno.notas.nota2 + aluno.notas.nota3) / 3;
+
+// let media = aluno.notas.media;
+// let frequencia = aluno.dados.frequencia;
+
+// if (frequencia < 75) {
+//     console.log(`Reprovado por falta. Frequência: ${frequencia}%`);
+// } else if (media >= 7) {
+//     console.log(`Aprovado! Média: ${media} | Frequência: ${frequencia}%`);
+// } else if (media >= 5) {
+//     console.log(`Recuperação. Média: ${media} | Frequência: ${frequencia}%`);
+// } else {
+//     console.log(`Reprovado por nota. Média: ${media}`);
+// }
+
+// console.table(aluno);
 
 console.log("_______________________________");
+
 
 
 // ------------------------------------------------------------
@@ -223,10 +252,59 @@ console.log("_______________________________");
 //    "Empréstimo de R$ <valor> aprovado para <nome>.
 //     <parcelas>x de R$ <parcelaMensal> com juros de <taxa>% ao mês."
 
-// → Seu código aqui:
+// let solicitacao = {
+//     cliente: {
+//         nome: readline.question("Nome: "),
+//         renda: readline.questionFloat("Renda mensal (R$): "),
+//         score: readline.questionInt("Score de credito (0-1000): "),
+//         possuiDividas: readline.keyInYN("Possui dividas em aberto? ")
+//     },
+//     emprestimo: {
+//         valorSolicitado: readline.questionFloat("Valor do emprestimo desejado (R$): "),
+//         aprovado: false,
+//         limite: 0,
+//         parcelas: 0,
+//         taxaJuros: 0
+//     }
+// };
 
+// let valorAprovado = solicitacao.emprestimo.valorSolicitado;
+
+// if (solicitacao.cliente.possuiDividas || solicitacao.cliente.score < 300) {
+//     console.log("Crédito negado. Regularize suas pendências.");
+// } else if (solicitacao.cliente.score >= 300 && solicitacao.cliente.score < 600) {
+//     // Aprovado Parcial
+//     solicitacao.emprestimo.limite = solicitacao.cliente.renda * 2;
+//     solicitacao.emprestimo.parcelas = 12;
+//     solicitacao.emprestimo.taxaJuros = 5;
+//     solicitacao.emprestimo.aprovado = true;
+// } else if (solicitacao.cliente.score >= 600 && solicitacao.cliente.renda >= 2000) {
+//     // Aprovado Pleno
+//     solicitacao.emprestimo.limite = solicitacao.cliente.renda * 5;
+//     solicitacao.emprestimo.parcelas = 36;
+//     solicitacao.emprestimo.taxaJuros = 1.5;
+//     solicitacao.emprestimo.aprovado = true;
+// } else if (solicitacao.cliente.score >= 800 && solicitacao.cliente.renda >= 5000) {
+//     // Aprovado Premium
+//     solicitacao.emprestimo.limite = solicitacao.cliente.renda * 10;
+//     solicitacao.emprestimo.parcelas = 60;
+//     solicitacao.emprestimo.taxaJuros = 0.8;
+//     solicitacao.emprestimo.aprovado = true;
+// }
+
+// if (solicitacao.emprestimo.aprovado) {
+//     valorAprovado = Math.min(solicitacao.emprestimo.valorSolicitado, solicitacao.emprestimo.limite);
+//     let totalComJuros = valorAprovado * (1 + solicitacao.emprestimo.taxaJuros / 100);
+//     let parcelaMensal = totalComJuros / solicitacao.emprestimo.parcelas;
+    
+//     console.table(solicitacao);
+//     console.log(`Empréstimo de R$ ${valorAprovado.toFixed(2)} aprovado para ${solicitacao.cliente.nome}.\n${solicitacao.emprestimo.parcelas}x de R$ ${parcelaMensal.toFixed(2)} com juros de ${solicitacao.emprestimo.taxaJuros}% ao mês.`);
+// } else {
+//     console.table(solicitacao);
+// }
 
 console.log("_______________________________");
+
 
 
 // ------------------------------------------------------------
@@ -265,7 +343,75 @@ console.log("_______________________________");
 //       "Embarque liberado! Boa viagem, <nome>!"
 // g) Exiba o objeto "embarque" com console.table() ao final.
 
-// → Seu código aqui:
+let embarque = {
+    passageiro: {
+        nome: "",
+        idade: 0,
+        documento: ""
+    },
+    bagagem: {
+        pesoPoraoKg: 0,
+        temMao: false,
+        pesoMaoKg: 0
+    },
+    voo: {
+        classe: "",
+        checkInOnline: false
+    }
+};
+
+embarque.passageiro.nome = readline.question("Nome: ");
+embarque.passageiro.idade = readline.questionInt("Idade: ");
+embarque.passageiro.documento = readline.question("Numero do documento (apenas numeros): ");
+embarque.bagagem.pesoPoraoKg = readline.questionFloat("Peso da bagagem de porao em kg (0 se nao tiver): ") || 0;
+embarque.bagagem.temMao = readline.keyInYN("Possui bagagem de mao? (sim/nao): ");
+embarque.bagagem.pesoMaoKg = embarque.bagagem.temMao ? (readline.questionFloat("Peso da bagagem de mao em kg (0 se nao tiver): ") || 0) : 0;
+embarque.voo.classe = readline.question("Classe: 'economica', 'executiva' ou 'primeira': ");
+embarque.voo.checkInOnline = readline.keyInYN("Fez check-in online? (sim/nao): ");
+
+let limitePorao, limiteMao;
+
+if (embarque.voo.classe === "economica") {
+    limitePorao = 23;
+    limiteMao = 10;
+} else if (embarque.voo.classe === "executiva") {
+    limitePorao = 32;
+    limiteMao = 15;
+} else if (embarque.voo.classe === "primeira") {
+    limitePorao = 50;
+    limiteMao = 18;
+} else {
+    console.log("Classe invalida!");
+    console.table(embarque);
+    console.log("_______________________________");
+}
+
+if (embarque.passageiro.documento.length < 7 || embarque.passageiro.documento.length > 11 || !/^\d+$/.test(embarque.passageiro.documento)) {
+    console.log("Documento invalido. Embarque negado.");
+} else if (embarque.bagagem.pesoPoraoKg > limitePorao && embarque.voo.classe !== "primeira") {
+    console.log("Excesso de bagagem de porao. Pague a taxa de R$ 80,00.");
+    if (embarque.bagagem.pesoMaoKg > limiteMao) {
+        console.log("Bagagem de mao acima do permitido. Despache no balcao.");
+    }
+    if (embarque.passageiro.idade < 18 && !embarque.voo.checkInOnline) {
+        console.log("Menor de idade sem check-in online. Dirija-se ao balcao.");
+    }
+    console.log(`Embarque liberado! Boa viagem, ${embarque.passageiro.nome}!`);
+} else if (embarque.bagagem.pesoMaoKg > limiteMao) {
+    console.log("Bagagem de mao acima do permitido. Despache no balcao.");
+    if (embarque.passageiro.idade < 18 && !embarque.voo.checkInOnline) {
+        console.log("Menor de idade sem check-in online. Dirija-se ao balcao.");
+    }
+    console.log(`Embarque liberado! Boa viagem, ${embarque.passageiro.nome}!`);
+} else if (embarque.passageiro.idade < 18 && !embarque.voo.checkInOnline) {
+    console.log("Menor de idade sem check-in online. Dirija-se ao balcao.");
+    console.log(`Embarque liberado! Boa viagem, ${embarque.passageiro.nome}!`);
+} else {
+    console.log(`Embarque liberado! Boa viagem, ${embarque.passageiro.nome}!`);
+}
+
+console.table(embarque);
 
 
 console.log("_______________________________");
+

@@ -1,0 +1,2 @@
+# TODO: Implement Desafio 5 in desafios-01.js\n\n## Steps:\n- [x] 1. Implement the embarque object structure and collect all user inputs (passageiro, bagagem, voo).\n- [x] 2. Define bagagem limits based on flight class.\n- [x] 3. Perform all validations: documento length, bagagem excess, age & checkin, using if/else if/else with &&/||.\n- [x] 4. Display console.table(embarque) and final messages.\n- [ ] 5. Test with `node desafios-01.js` (run to Desafio 5).\n- [ ] 6. Mark complete and attempt_completion.
+
